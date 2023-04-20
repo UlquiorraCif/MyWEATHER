@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">MyWEATHER</string>
+    <string name="todo">TODO</string>
+    <string name="min_temp">Min Temp</string>
+    <string name="time">Time</string>
+    <string name="max_temp">Max Temp</string>
+    <string name="_12">12</string>
+</resources>

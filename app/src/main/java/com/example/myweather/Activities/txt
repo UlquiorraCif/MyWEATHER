@@ -1,0 +1,30 @@
+data class FiveDay(
+    @SerializedName("city")
+    val city: City = City(),
+    @SerializedName("cnt")
+    val cnt: Int = 0,
+    @SerializedName("cod")
+    val cod: String = "",
+    @SerializedName("list")
+    val list: List<Any> = listOf(),
+    @SerializedName("message")
+    val message: Int = 0,
+    @SerializedName("temp_max")
+    val tempMax: Double = 0.0,
+    @SerializedName("temp_min")
+    val tempMin: Double = 0.0,
+    @SerializedName("description")
+    val description: String = "",
+    @SerializedName("icon")
+    val icon: String = "",
+    @SerializedName("id")
+    val id: Int = 0,
+    @SerializedName("main")
+    val main: String = "",
+    @SerializedName("dt_txt")
+    val dtTxt: String = "",
+    @SerializedName("temp")
+    val temp: Double = 0.0,
+
+
+)
