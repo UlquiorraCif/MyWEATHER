@@ -1,7 +1,7 @@
 package com.example.myweather.Activities
 
 
-import android.content.Intent
+
 import android.os.Bundle
 import android.widget.Toast
 import retrofit2.Call
