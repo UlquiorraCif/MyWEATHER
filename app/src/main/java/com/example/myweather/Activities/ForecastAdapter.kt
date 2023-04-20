@@ -1,6 +1,7 @@
 package com.example.myweather.Activities
 
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -35,4 +36,5 @@ class ForecastAdapter(private val forecastItems: List<ForecastItem>) :
     }
 
     override fun getItemCount() = forecastItems.size
+
 }

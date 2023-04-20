@@ -15,9 +15,10 @@ import com.example.myweather.Model2.FiveDayForecastItem
 import com.example.myweather.Utilites.ApiUtilities
 import com.example.myweather.databinding.ForecastItemBinding
 
+
 class FiveDayForecastActivity : AppCompatActivity() {
     private lateinit var binding: ForecastItemBinding
-    private var city2: String? = null
+    private var city: String? = null
     private val apiKey = "2dd3806c050f7e67309bb1de02539e23"
     private lateinit var forecastAdapter: ForecastAdapter
 
@@ -25,12 +26,11 @@ class FiveDayForecastActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ForecastItemBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        this.city = null
+        this.city = intent.getStringExtra("city")
 
-        this.city2 = intent.getStringExtra("city")
-
-        if (city2 != null) {
-            getFiveDayForecast(city2!!)
-            city2=""
+        if (city != null) {
+            getFiveDayForecast(city!!)
         } else {
             Toast.makeText(
                 this@FiveDayForecastActivity,
@@ -38,11 +38,12 @@ class FiveDayForecastActivity : AppCompatActivity() {
                 Toast.LENGTH_SHORT
             ).show()
         }
+
     }
 
-    private fun getFiveDayForecast(city2: String) {
+    private fun getFiveDayForecast(city: String) {
         val apiInterface = ApiUtilities.getApiInterface()
-        val call = apiInterface?.getFiveDayForecastData(city2, apiKey)
+        val call = apiInterface?.getFiveDayForecastData(city, apiKey)
 
         call?.enqueue(object : Callback<FiveDayForecastItem> {
             override fun onResponse(
@@ -63,7 +64,6 @@ class FiveDayForecastActivity : AppCompatActivity() {
 
             }
 
-
             override fun onFailure(call: Call<FiveDayForecastItem>, t: Throwable) {
                 Toast.makeText(
                     this@FiveDayForecastActivity,
@@ -71,7 +71,6 @@ class FiveDayForecastActivity : AppCompatActivity() {
                     Toast.LENGTH_SHORT
                 ).show()
             }
-
         })
     }
 

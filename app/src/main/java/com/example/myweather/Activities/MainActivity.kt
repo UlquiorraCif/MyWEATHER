@@ -49,7 +49,11 @@ open class MainActivity : AppCompatActivity() {
             val intent = Intent(this, FiveDayForecastActivity::class.java)
 
             intent.putExtra("city", binding.citySearch.text.toString())
+
+
             startActivity(intent)
+
+
         }
 
 
@@ -83,7 +87,7 @@ open class MainActivity : AppCompatActivity() {
 
 
         // Вызываем API-интерфейс для получения данных о погоде
-        ApiUtilities.getApiInterface()?.getCityWeatherData(city, apiKey)
+        ApiUtilities.getApiInterface()?.getCityWeatherData(city.trim(), apiKey)
             ?.enqueue(object : Callback<WeatherModel> {
 
                 // Если запрос успешен
